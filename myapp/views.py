@@ -13,6 +13,9 @@ def index(request):
 
 def check_task(request, task_id):
     res = AsyncResult(task_id)
+    print("Ready: ", res.ready())
+    print("Successful: ", res.successful())
+    print("Failed: ", res.failed())
     return render(request, 'result.html', {'res' : res})
 
 def about(request):
